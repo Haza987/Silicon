@@ -189,7 +189,68 @@ header .container {
   padding-bottom: 1rem;
 }
 
+.first-page{
+  background-color: var(--color-grey100)
+};
 
+
+
+.headline {
+  /* @@@@@@@@@@@@@ EDIT TEXT SIZE @@@@@@@@@@@@@@@@ */
+  color: #130122;
+}
+
+.headline-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline-bottom {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  /* @@@@@@@@@@@@@ EDIT TEXT SIZE @@@@@@@@@@@@@@@@ */
+  color: #585C7B;
+}
+
+.main-description1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-description2 {
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#appstore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+#googleplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#twophones {
+  display: none;
+}
+
+#downloadapp {
+  display: none;
+}
 
 /*footer*/
 footer {
@@ -222,6 +283,7 @@ footer {
     gap: 4.5rem;
   }
 
+  
   footer .container {
     flex-direction: row;
     gap: 5px;
