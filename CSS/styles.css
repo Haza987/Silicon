@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
-  --color-dark: #0B0F19;
-  --color-primary: #6366F1;
-  --color-gray: #9397ad;
-  --color-white: #FFFFFF;
-  
   --container-padding: 1rem;
   --transition-time: all 0.2s;
 
-  /* --color-grey100: #F3F6FF;
+  --color-grey100: #F3F6FF;
   --color-grey200: #EFF2FC;
   --color-grey300: #E2E5F1;
   --color-grey400: #D4D7E5;
@@ -23,7 +18,7 @@
   --color-error: #EF4444;
   --color-success: #22C55E;
   --color-warning: #FFBA08;
-  --color-info: #4C82F7; */
+  --color-info: #4C82F7;
 }
 
 * {
@@ -41,25 +36,28 @@ body {
   font-size: 16px;  
 }
 
+.container {
+  width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-gray);
+  color: var(--color-grey600);
   text-decoration: underline;
 }
 
-.nav-link{
-  color: var(--color-dark);
-  font-weight: 700;
-  text-decoration: none;
-}
-
+/* sign up/ in button*/
 .btn-primary {
   background-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-grey100);
   border-radius: 8px;
   padding: 12px 25px;
   display: flex;
@@ -69,8 +67,8 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gray);
-  color: var(--color-white);
+  background-color: var(--color-grey600);
+  color: var(--color-grey100);
   text-decoration: none;
 }
 
@@ -84,6 +82,7 @@ a:hover {
   font-size: 2rem;
 }
 
+/*dark mode toggle button*/
 .btn-toggle-switch {
   display: flex;
   align-items: center;
@@ -91,7 +90,7 @@ a:hover {
 }
 
 .btn-toggle-switch .label {
-
+  display: none;
 }
 
 .toggle-switch  {
@@ -115,7 +114,7 @@ a:hover {
 
 .toggle-switch input:checked + .slider:before{
   transform: translateX(18px);
-  background-color: var(--color-white);
+  background-color: var(--color-grey100);
 }
 
 .toggle-switch .slider {
@@ -125,7 +124,7 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-gray);
+  background-color: var(--color-grey600);
   transition: all 0.2s;
 }
 
@@ -136,7 +135,7 @@ a:hover {
   width: 20px;
   left: 3px;
   bottom: 2.5px;
-  background-color: var(--color-white);
+  background-color: var(--color-grey100);
   transition: all 0.2s;
 }
 
@@ -148,3 +147,77 @@ a:hover {
   border-radius: 50%;
 }
 
+/*navigation bar to not be shown in mobile mode*/
+.navbar {
+  display: none;
+}
+
+/*navigation bar*/
+.nav-link{
+  color: var(--color-grey900);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.active {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/*sign in button to not be shown in mobile mode*/
+#auth-signin {
+  display: none;
+}
+
+header .container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/*changes for tablet mode*/
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .btn-toggle-switch .label {
+    display: block;
+  }
+
+  header .container {
+    gap: 4.5rem;
+  }
+}
+
+/* changes for desktop mode */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  header .container {
+    grid-template-columns: auto 1fr auto auto;
+    gap: 3rem;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  #auth-signin {
+    display: block;
+  }
+
+  .btn-mobile {
+    display: none;
+  }
+}
