@@ -36,6 +36,12 @@ body {
   font-size: 16px;  
 }
 
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
 .container {
   width: 100%;
   padding-left: var(--container-padding);
@@ -183,6 +189,25 @@ header .container {
   padding-bottom: 1rem;
 }
 
+
+/*footer*/
+footer {
+  font-size: 14px;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  color: var(--color-grey600);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+}
+
+
 /*changes for tablet mode*/
 @media (min-width: 768px) {
   .container {
@@ -195,6 +220,12 @@ header .container {
 
   header .container {
     gap: 4.5rem;
+  }
+
+  footer .container {
+    flex-direction: row;
+    gap: 5px;
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -219,5 +250,9 @@ header .container {
 
   .btn-mobile {
     display: none;
+  }
+
+  footer .container {
+    padding-bottom: 2.5rem;
   }
 }
