@@ -12,13 +12,13 @@
   <header>
     <div class="container">
 
-      <a href="index.html"><img src="Images/Logo.svg" alt="Silicon Logo"></a>
+      <a id="logo" href="index.html"><img src="Images/Logo.svg" alt="Silicon Logo"></a>
 
-      <nav>
-        <a href="#">Features</a>
+      <nav id="main menu" class="navbar">
+        <a class="nav-link" href="#">Features</a>
       </nav>
 
-      <div class="btn-toggle-switch">
+      <div id="darkmode-toggle-switch" class="btn-toggle-switch">
         <span class="label">Dark mode</span>
         <label for="darkmode-switch" class="toggle-switch">
           <input id="darkmode-switch" type="checkbox">
@@ -26,9 +26,15 @@
         </label>
       </div>
 
-      <a href="#">
+      <a id="auth-signin" href="#" class="btn-primary">
+        <i class="fa-regular fa-user"></i>
         <span>Sign in / up</span>
       </a>
+
+      <button class="btn-mobile">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
    </div>
   </header>
 
