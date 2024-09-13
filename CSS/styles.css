@@ -25,6 +25,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -190,59 +191,36 @@ header .container {
 }
 
 .first-page{
-  background-color: var(--color-grey100)
-};
+  background-color: var(--color-grey100);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
 
 
 .headline {
   /* @@@@@@@@@@@@@ EDIT TEXT SIZE @@@@@@@@@@@@@@@@ */
   color: #130122;
-}
-
-.headline-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.headline-bottom {
-  padding-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
 }
 
 .description {
   /* @@@@@@@@@@@@@ EDIT TEXT SIZE @@@@@@@@@@@@@@@@ */
   color: #585C7B;
+  padding: 0 1rem 2rem 1rem;
 }
 
-.main-description1 {
+
+
+#appstore, #googleplay {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
 }
 
-.main-description2 {
-  padding-bottom: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#appstore {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 1rem;
-}
-
-#googleplay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 #twophones {
   display: none;
