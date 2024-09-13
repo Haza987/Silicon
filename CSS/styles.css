@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+/* *, *::before, *::after {
+  border: 2px solid hotpink;
+} */
+
 :root {
   --container-padding: 1rem;
   --transition-time: all 0.2s;
@@ -203,6 +207,7 @@ header .container {
   /* @@@@@@@@@@@@@ EDIT TEXT SIZE @@@@@@@@@@@@@@@@ */
   color: #130122;
   padding: 1rem 2rem 1rem 2rem;
+
 }
 
 .description {
@@ -210,7 +215,6 @@ header .container {
   color: #585C7B;
   padding: 0 1rem 2rem 1rem;
 }
-
 
 
 #appstore, #googleplay {
@@ -221,13 +225,19 @@ header .container {
   margin-bottom: 1rem;
 }
 
-
-#twophones {
+#twophones, #downloadapp {
   display: none;
 }
 
-#downloadapp {
-  display: none;
+.discover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2.5rem;
+}
+
+.downbutton {
+  padding-right: 2rem;
 }
 
 /*footer*/
@@ -261,7 +271,6 @@ footer {
     gap: 4.5rem;
   }
 
-  
   footer .container {
     flex-direction: row;
     gap: 5px;
@@ -270,9 +279,9 @@ footer {
 }
 
 /* changes for desktop mode */
-@media (min-width: 1400px) {
+@media (min-width: 1320px) {
   .container {
-    max-width: 1320px;
+    max-width: 2000px;
   }
   
   header .container {
