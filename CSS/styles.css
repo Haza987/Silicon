@@ -235,7 +235,7 @@ header .header-container {
   padding-top: 2.5rem;
 }
 
-.downbutton {
+.fa-solid, .fa-chevron-down {
   padding-right: 2rem;
 }
 
