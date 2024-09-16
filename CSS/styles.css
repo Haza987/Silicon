@@ -47,8 +47,8 @@ body {
   height: 100vh;
 }
 
-.container {
-  width: 100%;
+.header-container {
+  width: 100vw;
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
   margin-left: auto;
@@ -180,13 +180,12 @@ a:hover {
   text-decoration: underline;
 }
 
-
 /*sign in button to not be shown in mobile mode*/
 #auth-signin {
   display: none;
 }
 
-header .container {
+header .header-container {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr auto auto;
@@ -195,7 +194,8 @@ header .container {
   padding-bottom: 1rem;
 }
 
-.first-page{
+/*First page*/
+#first-page{
   background-color: var(--color-grey100);
   display: flex;
   flex-direction: column;
@@ -216,7 +216,7 @@ header .container {
 }
 
 
-#appstore, #googleplay {
+.appstore, .googleplay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,7 +224,7 @@ header .container {
   margin-bottom: 1rem;
 }
 
-#twophones, #downloadapp {
+.twophones, .downloadapp {
   display: none;
 }
 
@@ -260,19 +260,20 @@ footer {
   padding-bottom: 2rem;
   color: var(--color-grey600);
 
-  .container {
+  .footer-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
+    
   }
 }
 
 
 /*changes for tablet mode*/
 @media (min-width: 768px) {
-  .container {
+  .header-container {
     max-width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -282,8 +283,18 @@ footer {
     display: block;
   }
 
-  header .container {
+  header .header-container {
     gap: 4.5rem;
+  }
+
+  #first-page {
+    .twophones, .downloadapp {
+      display: flex;
+    }
+
+    .appstore, .googleplay {
+      display: none;
+    }
   }
 
   #brands {
@@ -291,7 +302,7 @@ footer {
 
     padding-top: 5rem;
 
-    .container {
+    .brand-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -303,7 +314,7 @@ footer {
     display: none;
   }
 
-  footer .container {
+  footer .footer-container {
     flex-direction: row;
     gap: 5px;
     padding-bottom: 1.5rem;
@@ -312,11 +323,7 @@ footer {
 
 /* changes for desktop mode */
 @media (min-width: 1320px) {
-  .container {
-    max-width: 100%;
-  }
-  
-  header .container {
+  header .header-container {
     grid-template-columns: auto 1fr auto auto;
     gap: 3rem;
   }
@@ -337,7 +344,7 @@ footer {
     display: flex;
   }
   
-  footer .container {
+  footer .footer-container {
     padding-bottom: 2.5rem;
   }
 }
