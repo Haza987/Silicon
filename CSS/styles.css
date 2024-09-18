@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-/* *, *::before, *::after {
-  border: 2px solid hotpink;
-} */
-
 :root {
   --container-padding: 1rem;
   --transition-time: all 0.2s;
@@ -18,7 +14,8 @@
   --color-grey800: #33354D;
   --color-grey900: #0B0F19;
   --color-primary: #6366F1;
-  --color-gradient: #6366F1 #8B5CF6 #D946EF;
+  --color-primary-hover: hsl(239, 84%, 70%);
+  --color-primary-clicked: hsl(239, 84%, 63%);
   --color-error: #EF4444;
   --color-success: #22C55E;
   --color-warning: #FFBA08;
@@ -29,7 +26,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  max-width: 100svw;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -44,15 +41,14 @@ body {
 .wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100vh;
+  height: 100svh;
 }
 
 .header-container {
-  width: 100vw;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-  margin-left: auto;
-  margin-right: auto;
+    width: 100%; 
+    max-width: 100%; 
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
 }
 
 a {
@@ -78,12 +74,42 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-grey600);
+  background-color: var(--color-primary-hover);
   color: var(--color-grey100);
   text-decoration: none;
 }
 
+.btn-primary:active{
+  background-color: var(--color-primary-clicked);
+}
+
 .btn-primary i {
+  margin-right: 1rem;
+}
+
+.app {
+  background-color: var(--color-grey900);
+  color: var(--color-grey100);
+  border-radius: 8px;
+  padding: 12px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.app:hover {
+  background-color: var(--color-primary);
+  color: var(--color-grey100);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app:active{
+  background-color: var(--color-primary-clicked);
+}
+
+.app i {
   margin-right: 1rem;
 }
 
@@ -91,6 +117,18 @@ a:hover {
   background-color: transparent;
   border: none;
   font-size: 2rem;
+}
+
+.btn-circle {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-grey300);
+  background-color: var(--color-grey100);
+  color: var(--color-grey900);
 }
 
 /*dark mode toggle button*/
@@ -195,52 +233,91 @@ header .header-container {
 }
 
 /*First page*/
-#first-page{
-  background-color: var(--color-grey100);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+
+#hero { 
+  background: rgb(99,102,241);
+  background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+  padding-bottom: 2rem;
+  height: 575px;
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "headline"
+    "content";
+  }
+
+  .headline {
+    grid-area: headline;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    h1{
+      font-size: 34px;
+      font-weight: 800;
+    }
+  }
+
+  .content {
+    grid-area: content;
+    text-align: center;
+    padding: 0 var(--container-padding);
+
+    p {
+      font-size: 18px;
+      margin-bottom: 2.5rem;
+    }
+
+
+    .downloadbuttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding: 0 .1rem;
+    }
+
+    .discovermore {
+      grid-area: discovermore;
+      color: #585C7B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  .images {
+    position: relative;
+    display: none;
+    grid-area: images;
+
+    .img-back {
+    position: absolute;      
+    z-index: -10;
+    bottom: 0;
+    right: 100px;
+    width: 70%;
+    height: 80%;
+    }
+
+    .img-front {
+    position: absolute;
+    z-index: -5;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    }
+  }
 }
 
-
-
-.headline {
-  color: #130122;
-  padding: 1rem 2rem 1rem 2rem;
-
-}
-
-.description {
-  color: #585C7B;
-  padding: 0 1rem 2rem 1rem;
-}
-
-
-.appstore, .googleplay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-  margin-bottom: 1rem;
-}
-
-.twophones, .downloadapp {
-  display: none;
-}
-
-.discover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2.5rem;
-}
-
-.fa-solid, .fa-chevron-down {
-  padding-right: 2rem;
-}
-
+/*brand section*/
 #brands {
   display: none;
+  /* padding-inline: 1rem; */
 }
 
 .brand-box {
@@ -253,13 +330,14 @@ header .header-container {
   align-items: center;
 }
 
+
 /*footer*/
 footer {
   font-size: 14px;
   padding-top: 1rem;
   padding-bottom: 2rem;
   color: var(--color-grey600);
-
+  
   .footer-container {
     display: flex;
     flex-direction: column;
@@ -273,10 +351,9 @@ footer {
 
 /*changes for tablet mode*/
 @media (min-width: 768px) {
-  .header-container {
-    max-width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+
+  body{
+    padding-inline: 1rem;
   }
 
   .btn-toggle-switch .label {
@@ -287,20 +364,9 @@ footer {
     gap: 4.5rem;
   }
 
-  #first-page {
-    .twophones, .downloadapp {
-      display: flex;
-    }
-
-    .appstore, .googleplay {
-      display: none;
-    }
-  }
 
   #brands {
     display: block;
-
-    padding-top: 5rem;
 
     .brand-container {
       display: flex;
@@ -308,6 +374,37 @@ footer {
       align-items: center;
       gap: 1rem;
     }
+  }
+
+  #hero {
+    padding-bottom: 0;
+
+    .main-container {
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+      "headline headline"
+      "content images";
+    }
+
+    .headline {
+      h1 {
+        font-size: 53px;
+      }
+    }
+
+    .content {
+      text-align: left;
+    }
+
+    .discovermore {
+      justify-content: flex-start;
+    }
+
+    .images{
+      display: block;
+    }
+
   }
 
   #brand-5, #brand-6{
@@ -319,13 +416,20 @@ footer {
     gap: 5px;
     padding-bottom: 1.5rem;
   }
+
 }
 
 /* changes for desktop mode */
-@media (min-width: 1320px) {
+@media (min-width: 1400px) {
+  
+  body{
+    padding-inline: 10rem;
+  }
+  
   header .header-container {
     grid-template-columns: auto 1fr auto auto;
     gap: 3rem;
+    padding-bottom: 8rem;
   }
 
   .navbar {
@@ -340,6 +444,42 @@ footer {
     display: none;
   }
 
+  #hero {
+
+    height: 800px;
+
+    .main-container {
+      grid-template-columns: 2fr 3fr;
+      grid-template-areas: 
+      "headline images"
+      "content images";
+    }
+
+    .headline {
+      text-align: left;
+    }
+
+    .downloadbuttons {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .discovermore {
+      margin-top: 10rem;
+    }
+
+    .images {
+      .img-back{
+        right: 25%;
+        width: 80%;
+      }
+
+      .img-front {
+        width: 80%;
+      }
+    }
+  }
+
   #brand-5, #brand-6{
     display: flex;
   }
@@ -348,3 +488,4 @@ footer {
     padding-bottom: 2.5rem;
   }
 }
+
