@@ -44,6 +44,8 @@ body {
   height: 100vh;
 }
 
+header {
+
 .header-container {
     width: 100%; 
     max-width: 100%; 
@@ -51,6 +53,7 @@ body {
     padding-right: var(--container-padding);
 }
 
+/* logo */
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -85,50 +88,6 @@ a:hover {
 
 .btn-primary i {
   margin-right: 1rem;
-}
-
-.app {
-  background-color: var(--color-grey900);
-  color: var(--color-grey100);
-  border-radius: 8px;
-  padding: 12px 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-.app:hover {
-  background-color: var(--color-primary);
-  color: var(--color-grey100);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.app:active{
-  background-color: var(--color-primary-clicked);
-}
-
-.app i {
-  margin-right: 1rem;
-}
-
-.btn-mobile {
-  background-color: transparent;
-  border: none;
-  font-size: 2rem;
-}
-
-.btn-circle {
-  height: 44px;
-  width: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  border: 1px solid var(--color-grey300);
-  background-color: var(--color-grey100);
-  color: var(--color-grey900);
 }
 
 /*dark mode toggle button*/
@@ -194,6 +153,51 @@ a:hover {
 
 .toggle-switch .slider.round:before {
   border-radius: 50%;
+}
+}
+
+.app {
+  background-color: var(--color-grey900);
+  color: var(--color-grey100);
+  border-radius: 8px;
+  padding: 12px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.app:hover {
+  background-color: var(--color-primary);
+  color: var(--color-grey100);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app:active{
+  background-color: var(--color-primary-clicked);
+}
+
+.app i {
+  margin-right: 1rem;
+}
+
+.btn-mobile {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+}
+
+.btn-circle {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-grey300);
+  background-color: var(--color-grey100);
+  color: var(--color-grey900);
 }
 
 /*navigation bar to not be shown in mobile mode*/
@@ -327,19 +331,23 @@ header .header-container {
 /*brand section*/
 #brands {
   display: none;
-  /* padding-inline: 1rem; */
+
+  .brand-box {
+    border: 1px solid var(--color-grey300);
+    border-radius: 8px;
+    height: 100px;
+    width: 196px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+  }
 }
 
-.brand-box {
-  border: 1px solid var(--color-grey300);
-  border-radius: 8px;
-  height: 100px;
-  width: 196px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
+#features {
+  text-align: center;
+}
 
 /*footer*/
 footer {
