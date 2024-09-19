@@ -347,6 +347,144 @@ header .header-container {
 
 #features {
   text-align: center;
+  padding-bottom: 2rem;
+  padding-inline: 1rem;
+
+  .phone {
+    display: none;
+  }
+
+  display: grid;
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas: 
+  "header"
+  "description"
+  "features";
+
+  .header{
+   grid-area: header;
+   color: var(--color-grey900);
+   padding-bottom: 2rem;
+   font-weight: 800;
+   font-size: 22px;
+  }
+
+  .main-description {
+    grid-area: description;
+    color: var(--color-grey700);
+    font-size: 18px;
+    padding-bottom: 3rem;
+  }
+
+  .featuresgrid {
+    grid-area: features;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature2 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  
+    .headline2 {
+      margin-bottom: 1rem;
+    }
+  
+    .feature2-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .feature3 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  
+    .headline3 {
+      margin-bottom: 1rem;
+    }
+  
+    .feature3-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .feature4 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  
+    .headline4 {
+      margin-bottom: 1rem;
+    }
+  
+    .feature4-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .feature5 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  
+    .headline5 {
+      margin-bottom: 1rem;
+    }
+  
+    .feature5-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .feature6 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  
+    .headline6 {
+      margin-bottom: 1rem;
+    }
+  
+    .feature6-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .feature1 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  
+    .headline1 {
+      margin-bottom: 1rem;
+    }
+  
+    .feature1-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
 
 /*footer*/
