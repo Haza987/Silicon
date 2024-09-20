@@ -295,7 +295,7 @@ header .header-container {
       align-items: center;
       justify-content: center;
       gap: 2.5rem;
-      padding-bottom: 2rem;
+      /* padding-bottom: 2rem; */
     }
   }
 
@@ -342,10 +342,13 @@ header .header-container {
     align-items: center;
     margin-bottom: 5rem;
   }
+
 }
 
 /*features section*/
 #features {
+  padding-bottom: 7rem;
+
   .item {
     padding: 1rem;
     display: grid;
@@ -371,6 +374,11 @@ header .header-container {
 
   .subdescription {
     font-size: 16px;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
   }
 
   .main1 {
@@ -425,6 +433,44 @@ header .header-container {
     "main6"
   }
 }
+
+/*How does it work section*/
+#HDIW {
+  text-align: center;
+  padding-inline: 1rem;
+  padding-bottom: 3rem;
+
+  .HDIWdesktop, .HDIWtablet {
+    display: none;
+  }
+  
+  h4 {
+    padding-bottom: 2rem;
+  }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@ ADJUST THE TEXT BOX SIZES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+  p {
+    color: var(--color-grey700);
+  }
+
+  
+  .HDIWmobile{
+    display: block;
+  }
+
+  h1 {
+    font-size: 28px;
+    padding-bottom: 2rem;
+  }
+
+  img {
+    padding-bottom: 2rem;
+  }
+
+}
+
+
 /*footer*/
 footer {
   font-size: 14px;
@@ -519,6 +565,18 @@ footer {
       "main5 main6"
     }  
   }
+
+  #HDIW{
+    .HDIWmobile, .HDIWdesktop {
+      display: none;
+    }
+
+    .HDIWtablet {
+      display: block;
+    }
+  }
+
+
     footer .footer-container {
       flex-direction: row;
       gap: 5px;
@@ -578,14 +636,17 @@ footer {
     }
   }
 
-  #brand-5, #brand-6{
-    display: flex;
+  #brands {
+    #brand-5, #brand-6{
+      display: flex;
+    }
   }
 
   #features {
     .phone{
       display: grid;
     }
+
     .grid{
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: 
@@ -595,6 +656,21 @@ footer {
       "phone main3 main4"
       "phone main5 main6";
     }  
+  }
+
+  #HDIW{
+    .HDIWmobile, .HDIWtablet {
+      display: none;
+    }
+
+    .HDIWdesktop {
+      display: block;
+
+      h1 {
+        font-size: 40px;
+        padding-bottom: 2rem;
+      }
+    }
   }
   
   footer .footer-container {
