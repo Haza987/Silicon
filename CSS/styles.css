@@ -239,6 +239,8 @@ header .header-container {
 /*First page*/
 
 #hero { 
+  /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOUR ACROSS THE SCREEN @@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
   background: rgb(99,102,241);
   background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
   padding-inline: 2rem;
@@ -308,7 +310,7 @@ header .header-container {
     position: absolute;      
     z-index: -10;
     bottom: 0;
-    right: 100px;
+    right: 200px;
     width: 70%;
     height: 80%;
     }
@@ -438,7 +440,10 @@ header .header-container {
 #HDIW {
   text-align: center;
   padding-inline: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 10rem;
+
+  /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOUR ACROSS THE SCREEN @@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+  background-color: var(--color-grey100);
 
   .HDIWdesktop, .HDIWtablet {
     display: none;
@@ -447,8 +452,6 @@ header .header-container {
   h4 {
     padding-bottom: 2rem;
   }
-
-/* @@@@@@@@@@@@@@@@@@@@@@@@@ ADJUST THE TEXT BOX SIZES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
   p {
     color: var(--color-grey700);
@@ -467,7 +470,71 @@ header .header-container {
   img {
     padding-bottom: 2rem;
   }
+}
 
+#info {
+  display: none;
+  
+
+  .top-section {
+    display: grid;
+    grid-auto-rows: minmax(100px auto);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "headline images"
+    "list images"
+    "learn images";
+
+    .headline-top {
+      grid-area: headline;
+    }
+
+    .list{
+      grid-area: list;
+      list-style: none;
+      padding: var(--spacing);
+    }
+
+    .learn-more{
+      grid-area: learn;
+    }
+
+    .right-images {
+      grid-area: images;
+    }
+  }
+
+  .bottom-section {
+    display: grid;
+    grid-auto-rows: minmax(100px auto);
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: 
+    "images headline headline"
+    "images infol infor"
+    "images learn learn";
+
+    .left-images {
+      grid-area: images;
+    }
+
+    .headline-bottom {
+      grid-area: headline;
+    }
+
+    .info {
+      .left-info {
+        grid-area: infol;
+      }
+
+      .right-info {
+        grid-area: infor;
+      }
+    }
+
+    .learn-more {
+      grid-area: learn;
+    }
+  }
 }
 
 
@@ -491,12 +558,17 @@ footer {
 
 /*changes for tablet mode*/
 @media (min-width: 768px) {
-  .btn-toggle-switch .label {
+  .btn-toggle-switch {
     display: block;
   }
 
+
   header .header-container {
     gap: 4.5rem;
+
+    .label {
+      display: block;
+    }
   }
 
 
@@ -671,6 +743,10 @@ footer {
         padding-bottom: 2rem;
       }
     }
+  }
+
+  #info{
+    display: block;
   }
   
   footer .footer-container {
