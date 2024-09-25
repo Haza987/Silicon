@@ -215,8 +215,6 @@ header {
 
 /* start of hero section */
 #hero {
-  /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOUR ACROSS THE SCREEN @@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-
   background: rgb(99,102,241);
   background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
   padding-inline: 2rem;
@@ -325,16 +323,17 @@ header {
     .img-back {
     position: absolute;
     z-index: -10;
-    bottom: 0;
+    bottom: -30px;
     right: 100px;
     width: 70%;
     height: 80%;
+    
     }
 
     .img-front {
     position: absolute;
     z-index: -5;
-    bottom: 0;
+    bottom: -30px;
     right: 0;
     width: 70%;
     height: 100%;
@@ -628,6 +627,115 @@ header {
 /* end of info section */
 
 
+/* start of review section */
+#review {
+  display: none;
+
+  background-color: var(--color-grey100);
+  height: 542px;
+  align-items: center;
+
+  .main-container {
+    display: grid;
+    grid-auto-rows: minmax(100px auto);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+    grid-template-areas: "headline card1 card2";
+
+    h1{
+      grid-area: headline;
+      font-size: 40px;
+      font-weight: 800;
+    }
+  
+    .card1 {
+      grid-area: card1;
+      position: relative;
+      border: 1px;
+      border-radius: .5rem;
+      background-color: white;
+      box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
+
+      .quotemark {
+        position: absolute;
+        top: -25px;
+      }
+
+      .stars {
+        padding: 2.5rem 1.5rem 0rem 1.5rem;   
+      }
+
+      .text {
+        padding: 1.5rem 1.5rem;     
+      }
+
+      .reviewer{
+        padding-inline: 1.5rem;
+        padding-bottom: .5rem;  
+      }
+    }
+  
+    .card2 {
+      grid-area: card2;
+      position: relative;
+      border: 1px;
+      border-radius: .5rem;
+      background-color: white;
+
+      box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
+
+      .quotemark {
+        position: absolute;
+        top: -25px;
+      }
+
+      .stars {
+        padding: 2.5rem 1.5rem 0rem 1.5rem;   
+      }
+
+      .text {
+        padding: 1.5rem 1.5rem;     
+      }
+
+      .reviewer{
+        padding-inline: 1.5rem;
+        padding-bottom: .5rem;  
+      }
+    }
+
+    .stars {
+
+    .fa-solid {
+        color: var(--color-warning);
+      }
+
+      .fa-regular {
+        color: var(--color-grey500);
+      }
+    }
+
+    p {
+      color: var(--color-grey700);
+    }
+
+    .reviewer {
+      display: flex;
+      gap: 1rem;
+
+      .job {
+        color: var(--color-grey600);
+      }
+    }
+  }
+}
+
+#review .main-container {
+  max-width: var(--desktop-width);
+  margin: var(--desktop-margin);
+}
+/* end of review section */
+
+
 /* start of footer section */
 footer {
   font-size: 14px;
@@ -693,7 +801,7 @@ footer {
 
     .headline {
       h1 {
-        font-size: 53px;
+        font-size: 44.3px;
       }
     }
 
@@ -775,8 +883,6 @@ footer {
 
   #hero {
 
-    height: 800px;
-
     .main-container {
       grid-template-columns: 2fr 3fr;
       grid-template-areas:
@@ -786,6 +892,10 @@ footer {
 
     .headline {
       text-align: left;
+      
+      h1{
+        font-size: 56px;
+      }
     }
 
     .content {
@@ -842,6 +952,10 @@ footer {
 
   #info{
     display: block;
+  }
+
+  #review {
+    display: grid;
   }
 
   footer .footer-container {
