@@ -4,6 +4,9 @@
   --container-padding: 1rem;
   --transition-time: all 0.2s;
 
+  --desktop-width: 1320px;
+  --desktop-margin: 0 auto;
+
   --color-grey100: #F3F6FF;
   --color-grey200: #EFF2FC;
   --color-grey300: #E2E5F1;
@@ -30,6 +33,11 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body, section, div, header, footer, main, aside, nav, blockquote, p, span {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #FFF;
   font-family: "Manrope", sans-serif;
@@ -51,7 +59,8 @@ header {
 
   .header-container {
       width: 100%;
-      max-width: 100%;
+      max-width: var(--desktop-width);
+      margin: var(--desktop-margin);
       padding-left: var(--container-padding);
       padding-right: var(--container-padding);
 
@@ -209,7 +218,7 @@ header {
   /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOUR ACROSS THE SCREEN @@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
   background: rgb(99,102,241);
-  background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+  background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
   padding-inline: 2rem;
   height: 575px;
 
@@ -242,7 +251,6 @@ header {
       font-size: 18px;
       margin-bottom: 2.5rem;
     }
-
 
     .downloadbuttons {
       display: flex;
@@ -341,12 +349,21 @@ header {
     }
   }
 }
+
+#hero .main-container {
+  max-width: var(--desktop-width);
+  margin: var(--desktop-margin);
+}
 /* end of hero section */
 
 
 /*start of brand section */
 #brands {
   display: none;
+
+  max-width: var(--desktop-width);
+  margin: var(--desktop-margin);
+  padding-top: 1rem;
 
   .brand-box {
     border: 1px solid var(--color-grey300);
@@ -366,6 +383,8 @@ header {
 /* start of features section */
 #features {
   padding-bottom: 7rem;
+  max-width: var(--desktop-width);
+  margin: var(--desktop-margin);
 
   .item {
     padding: 1rem;
@@ -489,13 +508,20 @@ header {
     padding-bottom: 2rem;
   }
 }
+
+#HDIW .main-container {
+  max-width: var(--desktop-width);
+  margin: var(--desktop-margin);
+}
 /* end of how does it work section */
 
 
 /* start of info section */
 #info {
   display: none;
-  margin-top: 5rem;
+  padding-top: 5rem;
+  max-width: var(--desktop-width);
+  margin: var(--desktop-margin);
 
   .top-section {
     display: grid;
@@ -607,6 +633,8 @@ footer {
   font-size: 14px;
   padding-top: 1rem;
   padding-bottom: 2rem;
+  max-width: var(--desktop-width);
+  margin: var(--desktop-margin);
   color: var(--color-grey600);
 
   .footer-container {
@@ -724,16 +752,7 @@ footer {
 
 /* changes for desktop mode */
 @media (min-width: 1400px) {
-  
-  body{
-    max-width: 100%;
-  }
 
-  .wrapper{
-    max-width: 1320px; 
-    margin-inline: auto;
-  }
-  
   header .header-container {
     grid-template-columns: auto 1fr auto auto;
     gap: 3rem;
