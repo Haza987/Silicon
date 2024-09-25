@@ -736,6 +736,14 @@ header {
 /* end of review section */
 
 
+/* start of FAQ section */
+#faq{
+  .faqdesktop {
+    display: none;
+  }
+}
+/* end of FAQ section */
+
 /* start of footer section */
 footer {
   font-size: 14px;
