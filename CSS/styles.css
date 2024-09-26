@@ -218,7 +218,7 @@ header {
   background: rgb(99,102,241);
   background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
   padding-inline: 1rem;
-  height: 575px;
+  height: 500px;
 
   .main-container {
     display: grid;
@@ -390,6 +390,7 @@ header {
     font-size: 22px;
     text-align: center;
   }
+
   .main-description{
     grid-area: description;
     color: var(--color-grey700);
@@ -427,16 +428,19 @@ header {
     display: flex;
     gap: 1rem;
   }
+
   .main4 {
     grid-area: main4;
     display: flex;
     gap: 1rem;
   }
+
   .main5 {
     grid-area: main5;
     display: flex;
     gap: 1rem;
   }
+
   .main6 {
     grid-area: main6;
     display: flex;
@@ -512,6 +516,7 @@ header {
   padding-top: 5rem;
 
   .top-section {
+    position: relative;
     display: grid;
     margin-bottom: 5rem;
 
@@ -549,6 +554,12 @@ header {
 
     .right-images {
       grid-area: images;
+      
+      .front {
+        position: absolute;
+        bottom: 40px;
+        right: 75px;
+      }
     }
   }
 
@@ -662,7 +673,7 @@ header {
         padding-inline: 1.5rem;
         padding-bottom: .5rem;  
       }
-  }
+    }
   
     .card2 {
       grid-area: card2;
@@ -900,9 +911,6 @@ header {
 
 
 /* start of subscribe section */
-
-/* @@@@@@@@@@@@@@@  STYLE FOR TABLET AND DESKTOP SECTIONS  @@@@@@@@@@@@@@@@@@@@ */
-/* @@@@@@@@@@@@@@@  STYLE THE HIGHLIGHTED AND ACTIVE FOR INPUT  @@@@@@@@@@@@@@@@@@@@@@ */
 #subscribe {
   display: flex;
   justify-content: center;
@@ -913,8 +921,7 @@ header {
     height: 251px;
     background-color: var(--color-grey100);
     border-radius: 3%;
-    padding: var(--container-padding);
-    padding: 2rem;
+    padding: 3rem var(--container-padding);
 
     display: grid;
     row-gap: 2rem;
@@ -933,6 +940,11 @@ header {
     grid-area: text;
   }
 
+  .main-desktop-text {
+    grid-area: dtext;
+    display: none;
+  }
+
   .input{
     display: flex;
     grid-area: input;
@@ -946,8 +958,7 @@ header {
   .input-container i {
     position: absolute;
     left: 10px;
-    top: 37%;
-    transform: translateY(-50%);
+    top: 25%;
     color: #ccc; 
   }
   
@@ -982,17 +993,7 @@ header {
     font-weight: 600;
   }
 
-  /* .btn-primary {
-    border-radius: 8px;
-    padding: 12px 25px;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-  } */
-
-  /* .btn-primary:hover {
+  .btn-primary:hover{
     background-color: var(--color-primary-hover);
     color: var(--color-grey100);
     text-decoration: none;
@@ -1001,7 +1002,7 @@ header {
 
   .btn-primary:active{
     background-color: var(--color-primary-clicked);
-  } */
+  }
 }
 /* end of subscribe section */
 
@@ -1047,6 +1048,7 @@ footer {
 
   #hero {
     padding-bottom: 0;
+    height: 523px;
 
     .main-container {
       gap: 1rem;
@@ -1171,6 +1173,36 @@ footer {
     }
   }
 
+  #subscribe{
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+  
+  #subscribe .main-container {
+    width: 700px;
+    height: 223px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas: "bell text input";
+
+
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #subscribe .main-container .bell,
+  #subscribe .main-container .main-text,
+  #subscribe .main-container .main-desktop-text,
+  #subscribe .main-container .input {
+  
+    padding-top: 2rem; 
+  }
+
+  #subscribe .input-container i {
+    top: 35%;
+  }
+
   footer .footer-container {
       flex-direction: row;
       gap: 5px;
@@ -1207,6 +1239,7 @@ footer {
   }
 
   #hero {
+    height: 575px;
 
     .main-container {
       grid-template-columns: 2fr 3fr;
@@ -1293,6 +1326,8 @@ footer {
 
   #info{
     display: block;
+    padding-inline: 5rem; 
+
   }
 
   #review {
@@ -1326,6 +1361,42 @@ footer {
     .desktop-header{
       display: grid;
     }
+  }
+
+  #subscribe{
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+
+    .form-input {
+      width: 330px;
+    }
+
+    .main-text {
+      display: none;
+    }
+
+    .main-desktop-text {
+      display: grid;
+    }
+  }
+  
+  #subscribe .main-container {
+    width: 100vw;
+    height: 223px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "bell dtext input";
+    gap: 2rem;
+
+  }
+
+  #subscribe .main-container .bell {
+    padding-left: 10rem;
+  }
+
+  #subscribe .main-container .input {
+    padding-right: 5rem;
   }
 
   footer .footer-container {
