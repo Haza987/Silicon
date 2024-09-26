@@ -4,6 +4,9 @@
   --container-padding: 1rem;
   --transition-time: all 0.2s;
 
+  --tablet-width: 720px;
+  --tablet-margin: 0 auto;
+
   --desktop-width: 1320px;
   --desktop-margin: 0 auto;
 
@@ -21,6 +24,7 @@
   --color-primary-clicked: hsl(239, 84%, 63%);
   --color-error: #EF4444;
   --color-success: #22C55E;
+  --color-success-clicked: hsl(142, 71%, 40%);
   --color-warning: #FFBA08;
   --color-info: #4C82F7;
 }
@@ -59,8 +63,6 @@ header {
 
   .header-container {
       width: 100%;
-      max-width: var(--desktop-width);
-      margin: var(--desktop-margin);
       padding-left: var(--container-padding);
       padding-right: var(--container-padding);
 
@@ -84,7 +86,6 @@ header {
   }
   /* end of logo */
 
-
   /* fetures link */
   .navbar {
     display: none;
@@ -101,7 +102,6 @@ header {
     }
   }
   /* end of features link */
-
 
   /* start of dark mode toggle button */
   .btn-toggle-switch {
@@ -217,7 +217,7 @@ header {
 #hero {
   background: rgb(99,102,241);
   background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
-  padding-inline: 2rem;
+  padding-inline: 1rem;
   height: 575px;
 
   .main-container {
@@ -348,11 +348,6 @@ header {
     }
   }
 }
-
-#hero .main-container {
-  max-width: var(--desktop-width);
-  margin: var(--desktop-margin);
-}
 /* end of hero section */
 
 
@@ -360,8 +355,8 @@ header {
 #brands {
   display: none;
 
-  max-width: var(--desktop-width);
-  margin: var(--desktop-margin);
+  max-width: var(--tablet-width);
+  margin: var(--tablet-margin);
   padding-top: 1rem;
 
   .brand-box {
@@ -382,8 +377,6 @@ header {
 /* start of features section */
 #features {
   padding-bottom: 7rem;
-  max-width: var(--desktop-width);
-  margin: var(--desktop-margin);
 
   .item {
     padding: 1rem;
@@ -476,7 +469,7 @@ header {
 #HDIW {
   text-align: center;
   padding-inline: 1rem;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
 
   /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOUR ACROSS THE SCREEN @@@@@@@@@@@@@@@@@@@@@@@@@@@ */
   background-color: var(--color-grey100);
@@ -507,20 +500,16 @@ header {
     padding-bottom: 2rem;
   }
 }
-
-#HDIW .main-container {
-  max-width: var(--desktop-width);
-  margin: var(--desktop-margin);
-}
 /* end of how does it work section */
 
 
 /* start of info section */
 #info {
-  display: none;
-  padding-top: 5rem;
   max-width: var(--desktop-width);
   margin: var(--desktop-margin);
+
+  display: none;
+  padding-top: 5rem;
 
   .top-section {
     display: grid;
@@ -634,7 +623,7 @@ header {
   background-color: var(--color-grey100);
   height: 542px;
   align-items: center;
-
+  
   .main-container {
     display: grid;
     grid-auto-rows: minmax(100px auto);
@@ -655,25 +644,25 @@ header {
       border-radius: .5rem;
       background-color: white;
       box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
-
+  
       .quotemark {
         position: absolute;
         top: -25px;
       }
-
+  
       .stars {
         padding: 2.5rem 1.5rem 0rem 1.5rem;   
       }
-
+  
       .text {
         padding: 1.5rem 1.5rem;     
       }
-
+  
       .reviewer{
         padding-inline: 1.5rem;
         padding-bottom: .5rem;  
       }
-    }
+  }
   
     .card2 {
       grid-area: card2;
@@ -738,11 +727,176 @@ header {
 
 /* start of FAQ section */
 #faq{
-  .faqdesktop {
+  text-align: center;
+  padding-top: 3rem;
+  margin: 1rem;
+
+  .header{
+    grid-area: header;
+    font-size: 25px;
+    font-weight: 800;
+    padding-bottom: 2rem;
+  }
+
+  .desktop-header{
+    grid-area: d-header;
+    display: none;
+    text-align: left;
+  }
+
+  .undertext {
+    grid-area: text;
+    font-size: 18px;
+    color: var(--color-grey500);
+    margin-bottom: 3rem;
+  }
+
+  .cards {
+    display: none;
+    grid-area: cards;
+    margin-bottom: 2rem;
+    gap: 2rem;
+
+    .phone {    
+      width: 343px;
+      border: 1px solid var(--color-grey300);
+      padding: var(--container-padding);
+      padding: 2rem;
+      text-align: left;
+
+      span{
+        color: var(--color-primary);
+      }
+
+      span:active {
+        color: var(--color-primary-clicked);
+      }
+    }
+  
+    .chat {
+      width: 343px;
+      border: 1px solid var(--color-grey300);
+      padding: var(--container-padding);
+      padding: 2rem;
+      text-align: left;
+
+      span{
+        color: var(--color-success);
+      }
+
+      span:active {
+        color: var(--color-success-clicked);
+      }
+    }
+
+    p{
+      padding: 1rem 0;
+    }
+
+    span{
+      font-weight: 600;
+    }
+
+    span:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .questions {
+    grid-area: questions;
+    padding-bottom: 3rem;
+  }
+
+  .closed {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-template-areas: "question button";
+
+    height: 75px;
+    border: 1px solid var(--color-grey300);
+    align-items: center;
+    padding: var(--container-padding);
+    gap: 1rem;
+        
+    h6{
+      grid-area: question;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .btn-circle {
+      grid-area: button;
+    }
+
+  }
+  
+  .closed:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .answer{
+    border: 1px solid var(--color-grey300);
+    padding: 1.5rem;
+    text-align: left;
+    font-size: 14px;
+    color: var(--color-grey600);
+  }
+
+  .faq1 {
     display: none;
   }
+
+  .faq3-open {
+    display: none;
+  }
+
+  .btn-circle {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--color-grey300);
+    background-color: var(--color-grey100);
+    color: var(--color-grey900);
+    
+  }
+  
+  .open {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+  .contactus {
+    grid-area: contact;
+
+    background-color: var(--color-primary);
+    color: var(--color-grey100);
+    border-radius: 8px;
+    padding: 12px 25px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .contactus:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-grey100);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .contactus:active {
+    background-color: var(--color-primary-clicked);
+  }  
 }
 /* end of FAQ section */
+
 
 /* start of footer section */
 footer {
@@ -769,6 +923,9 @@ footer {
 @media (min-width: 768px) {
   
   header .header-container {
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+
     gap: 4.5rem;
     
     .label {
@@ -778,22 +935,6 @@ footer {
   
   .btn-toggle-switch {
     display: block;
-  }
-
-  #brands {
-    display: block;
-    padding-inline: 1rem;
-
-    .brand-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    #brand-5, #brand-6{
-      display: none;
-    }
   }
 
   #hero {
@@ -827,7 +968,30 @@ footer {
 
   }
 
+  #hero .main-container{
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+
+  #brands {
+    display: block;
+    padding-inline: 1rem;
+
+    .brand-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    #brand-5, #brand-6{
+      display: none;
+    }
+  }
+
   #features {
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
 
     .header{
       font-size: 33.5px;
@@ -847,7 +1011,7 @@ footer {
     }
   }
 
-  #HDIW{
+  #HDIW {
     .HDIWmobile, .HDIWdesktop {
       display: none;
     }
@@ -857,11 +1021,53 @@ footer {
     }
   }
 
-    footer .footer-container {
+  #HDIW .main-container {
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+
+  #faq {
+
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "text"
+    "questions"
+    "cards";
+
+    .faq1 {
+      display: grid;
+    }
+
+    .faq1-open {
+      display: none;
+    }
+
+    .faq3 {
+      display: none;
+    }
+
+    .faq3-open {
+      display: grid;
+    }
+
+    .cards {
+      display: flex;
+    }
+
+    .contactus {
+      display: none;
+    }
+  }
+
+  footer .footer-container {
       flex-direction: row;
       gap: 5px;
       padding-bottom: 1.5rem;
-    }
+  }
 }
 /* end of changes for tablet mode */
 
@@ -870,6 +1076,9 @@ footer {
 @media (min-width: 1400px) {
 
   header .header-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+    
     grid-template-columns: auto 1fr auto auto;
     gap: 3rem;
     padding-bottom: 8rem;
@@ -921,13 +1130,24 @@ footer {
     }
   }
 
+  #hero .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+  }
+
   #brands {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+    
     #brand-5, #brand-6{
       display: flex;
     }
   }
 
   #features {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+
     .phone{
       display: grid;
     }
@@ -958,12 +1178,46 @@ footer {
     }
   }
 
+  #HDIW .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+  }
+
   #info{
     display: block;
   }
 
   #review {
     display: grid;
+  }
+
+  #faq {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "d-header questions"
+    "text questions"
+    "cards questions"
+    "empty questions";
+    gap: 2rem;
+
+    .cards {
+      width: 450px;
+    }
+
+    .header {
+      display: none;
+    }
+
+    .undertext {
+      text-align: left;
+    }
+
+    .desktop-header{
+      display: grid;
+    }
   }
 
   footer .footer-container {
