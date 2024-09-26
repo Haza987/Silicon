@@ -729,6 +729,7 @@ header {
 #faq{
   text-align: center;
   padding-top: 3rem;
+  padding-bottom: 3rem;
   margin: 1rem;
 
   .header{
@@ -896,6 +897,113 @@ header {
   }  
 }
 /* end of FAQ section */
+
+
+/* start of subscribe section */
+
+/* @@@@@@@@@@@@@@@  STYLE FOR TABLET AND DESKTOP SECTIONS  @@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@  STYLE THE HIGHLIGHTED AND ACTIVE FOR INPUT  @@@@@@@@@@@@@@@@@@@@@@ */
+#subscribe {
+  display: flex;
+  justify-content: center;
+
+
+  .main-container{
+    width: 366px;
+    height: 251px;
+    background-color: var(--color-grey100);
+    border-radius: 3%;
+    padding: var(--container-padding);
+    padding: 2rem;
+
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "bell text"
+    "input input";
+  }
+
+  .bell {
+    grid-area: bell;
+  }
+
+  .main-text {
+    grid-area: text;
+  }
+
+  .input{
+    display: flex;
+    grid-area: input;
+  }
+
+  .input-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .input-container i {
+    position: absolute;
+    left: 10px;
+    top: 37%;
+    transform: translateY(-50%);
+    color: #ccc; 
+  }
+  
+  .input-container .form-input {
+    padding-left: 35px;
+  }
+
+  .form-input {
+    border: 1px solid var(--color-grey400);
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+    height: 52px;
+  }
+
+  .form-input::placeholder {
+    color: var(--color-grey500);
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-grey100);
+    display: block;  
+    height: 52px;
+    width: 115px;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--container-padding);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* .btn-primary {
+    border-radius: 8px;
+    padding: 12px 25px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  } */
+
+  /* .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-grey100);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:active{
+    background-color: var(--color-primary-clicked);
+  } */
+}
+/* end of subscribe section */
 
 
 /* start of footer section */
