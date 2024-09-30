@@ -10,14 +10,20 @@
   --desktop-width: 1320px;
   --desktop-margin: 0 auto;
 
+  background-color: white;
+  --color-bg: #ffffff;
+  --color-grey100-text: #F3F6FF;
   --color-grey100: #F3F6FF;
   --color-grey200: #EFF2FC;
   --color-grey300: #E2E5F1;
   --color-grey400: #D4D7E5;
   --color-grey500: #B4B7C9;
+  --color-grey600-text: #9397AD;
   --color-grey600: #9397AD;
+  --color-grey700-text: #565973;
   --color-grey700: #565973;
   --color-grey800: #33354D;
+  --color-grey900-text: #0B0F19;
   --color-grey900: #0B0F19;
   --color-primary: #6366F1;
   --color-primary-hover: hsl(239, 84%, 70%);
@@ -27,6 +33,7 @@
   --color-success-clicked: hsl(142, 71%, 40%);
   --color-warning: #FFBA08;
   --color-info: #4C82F7;
+  --color-hero-gradient: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
 }
 
 *, *::after, *::before {
@@ -35,6 +42,39 @@
   box-sizing: border-box;
   max-width: 100vw;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: background-color 300ms ease, color 20ms ease, border-color 300ms ease;
+}
+
+html {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+  background-color: #0B0F19;
+  --color-bg: #0B0F19;
+  --color-grey100-text: #F3F6FF;
+  --color-grey100: #151822;
+  --color-grey200: #EFF2FC;
+  --color-grey300: #E2E5F1;
+  --color-grey400: #D4D7E5;
+  --color-grey500: #B4B7C9;
+  --color-grey600-text: #F3F6FF;
+  --color-grey600: #9397AD;
+  --color-grey700-text: #F3F6FF;
+  --color-grey700: #565973;
+  --color-grey800: #33354D;
+  --color-grey900-text: #F3F6FF;
+  --color-grey900: #F3F6FF;
+  --color-primary: #6366F1;
+  --color-primary-hover: hsl(239, 84%, 70%);
+  --color-primary-clicked: hsl(239, 84%, 63%);
+  --color-error: #EF4444;
+  --color-success: #22C55E;
+  --color-success-clicked: hsl(142, 71%, 40%);
+  --color-warning: #FFBA08;
+  --color-info: #4C82F7;
+  --color-hero-gradient: linear-gradient(to top, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%), #0b0f19;;
 }
 
 body, section, div, header, footer, main, aside, nav, blockquote, p, span {
@@ -66,6 +106,8 @@ header {
       padding-left: var(--container-padding);
       padding-right: var(--container-padding);
 
+      background-color: var(--color-bg);
+
       display: grid;
       align-items: center;
       grid-template-columns: 1fr auto auto;
@@ -76,7 +118,7 @@ header {
 
   /* logo */
   a {
-    color: var(--color-primary);
+    color: var(--color-grey900-text);
     text-decoration: none;
   }
 
@@ -91,7 +133,7 @@ header {
     display: none;
   
     .nav-link{
-      color: var(--color-grey900);
+      color: var(--color-grey900-text);
       font-weight: 600;
       text-decoration: none;
     }
@@ -177,7 +219,7 @@ header {
   
   .btn-primary {
     background-color: var(--color-primary);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     border-radius: 8px;
     padding: 12px 25px;
     display: flex;
@@ -188,7 +230,7 @@ header {
 
   .btn-primary:hover {
     background-color: var(--color-primary-hover);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     text-decoration: none;
   }
 
@@ -215,8 +257,7 @@ header {
 
 /* start of hero section */
 #hero {
-  background: rgb(99,102,241);
-  background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+  background: var(--color-hero-gradient);
   padding-inline: 1rem;
   height: 500px;
 
@@ -264,7 +305,7 @@ header {
 
       .app {
         background-color: var(--color-grey900);
-        color: var(--color-grey100);
+        color: var(--color-grey100-text);
         border-radius: 8px;
         padding: 12px 25px;
         display: flex;
@@ -275,7 +316,7 @@ header {
       
       .app:hover {
         background-color: var(--color-primary);
-        color: var(--color-grey100);
+        color: var(--color-grey100-text);
         text-decoration: none;
         cursor: pointer;
       }
@@ -287,7 +328,7 @@ header {
 
     .discovermore {
       grid-area: discovermore;
-      color: #585C7B;
+      color: var(--color-grey700-text);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -304,7 +345,7 @@ header {
         border-radius: 50%;
         border: 1px solid var(--color-grey300);
         background-color: var(--color-grey100);
-        color: var(--color-grey900);
+        color: var(--color-grey900-text);
       }
 
     }
@@ -322,7 +363,6 @@ header {
 
     .img-back {
     position: absolute;
-    z-index: -10;
     bottom: -30px;
     right: 100px;
     width: 70%;
@@ -332,7 +372,6 @@ header {
 
     .img-front {
     position: absolute;
-    z-index: -5;
     bottom: -30px;
     right: 0;
     width: 70%;
@@ -355,8 +394,7 @@ header {
 #brands {
   display: none;
 
-  max-width: var(--tablet-width);
-  margin: var(--tablet-margin);
+  background-color: var(--color-bg);
   padding-top: 1rem;
 
   .brand-box {
@@ -378,6 +416,8 @@ header {
 #features {
   padding-bottom: 7rem;
 
+  background-color: var(--color-bg);
+
   .item {
     padding: 1rem;
     display: grid;
@@ -385,7 +425,7 @@ header {
 
   .header{
     grid-area: header;
-    color: var(--color-grey900);
+    color: var(--color-grey900-text);
     font-weight: 800;
     font-size: 22px;
     text-align: center;
@@ -393,7 +433,7 @@ header {
 
   .main-description{
     grid-area: description;
-    color: var(--color-grey700);
+    color: var(--color-grey700-text);
     font-size: 18px;
     text-align: center;
   }
@@ -475,7 +515,6 @@ header {
   padding-inline: 1rem;
   padding-bottom: 5rem;
 
-  /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOUR ACROSS THE SCREEN @@@@@@@@@@@@@@@@@@@@@@@@@@@ */
   background-color: var(--color-grey100);
 
   .HDIWdesktop, .HDIWtablet {
@@ -487,7 +526,7 @@ header {
   }
 
   p {
-    color: var(--color-grey700);
+    color: var(--color-grey700-text);
   }
 
 
@@ -509,8 +548,7 @@ header {
 
 /* start of info section */
 #info {
-  max-width: var(--desktop-width);
-  margin: var(--desktop-margin);
+  background-color: var(--color-bg);
 
   display: none;
   padding-top: 5rem;
@@ -595,7 +633,7 @@ header {
 
   .learn-more {
     background-color: var(--color-primary);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     border-radius: 8px;
     padding: 12px 25px;
     display: flex;
@@ -614,7 +652,7 @@ header {
 
   .learn-more:hover {
     background-color: var(--color-primary-hover);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     text-decoration: none;
     cursor: pointer;
   }
@@ -653,7 +691,8 @@ header {
       position: relative;
       border: 1px;
       border-radius: .5rem;
-      background-color: white;
+      background-color: var(--color-bg);
+      color: var(--color-grey100-text);
       box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
   
       .quotemark {
@@ -666,12 +705,15 @@ header {
       }
   
       .text {
-        padding: 1.5rem 1.5rem;     
+        padding: 1.5rem 1.5rem;
+        color: var(--color-grey100-text);
+        font-weight: 100;
       }
   
       .reviewer{
         padding-inline: 1.5rem;
         padding-bottom: .5rem;  
+        color: var(--color-grey100-text);
       }
     }
   
@@ -680,7 +722,7 @@ header {
       position: relative;
       border: 1px;
       border-radius: .5rem;
-      background-color: white;
+      background-color: var(--color-bg);
 
       box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
 
@@ -694,12 +736,15 @@ header {
       }
 
       .text {
-        padding: 1.5rem 1.5rem;     
+        padding: 1.5rem 1.5rem;
+        color: var(--color-grey100-text);
+        font-weight: 100;     
       }
 
       .reviewer{
         padding-inline: 1.5rem;
         padding-bottom: .5rem;  
+        color: var(--color-grey100-text);
       }
     }
 
@@ -738,10 +783,13 @@ header {
 
 /* start of FAQ section */
 #faq{
+  position: relative;
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin: 1rem;
+
+  background-color: var(--color-bg);
 
   .header{
     grid-area: header;
@@ -853,7 +901,7 @@ header {
     padding: 1.5rem;
     text-align: left;
     font-size: 14px;
-    color: var(--color-grey600);
+    color: var(--color-grey600-text);
   }
 
   .faq1 {
@@ -873,7 +921,7 @@ header {
     border-radius: 50%;
     border: 1px solid var(--color-grey300);
     background-color: var(--color-grey100);
-    color: var(--color-grey900);
+    color: var(--color-grey900-text);
     
   }
   
@@ -885,8 +933,11 @@ header {
   .contactus {
     grid-area: contact;
 
+    position: absolute;
+    left: 115px;
+    bottom: 20px;
     background-color: var(--color-primary);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     border-radius: 8px;
     padding: 12px 25px;
     justify-content: center;
@@ -898,7 +949,7 @@ header {
 
   .contactus:hover {
     background-color: var(--color-primary-hover);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     text-decoration: none;
     cursor: pointer;
   }
@@ -914,6 +965,8 @@ header {
 #subscribe {
   display: flex;
   justify-content: center;
+
+  background-color: var(--color-bg);
 
 
   .main-container{
@@ -958,7 +1011,7 @@ header {
   .input-container i {
     position: absolute;
     left: 10px;
-    top: 25%;
+    top: 35%;
     color: #ccc; 
   }
   
@@ -979,7 +1032,7 @@ header {
 
   .btn-primary {
     background-color: var(--color-primary);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     display: block;  
     height: 52px;
     width: 115px;
@@ -995,7 +1048,7 @@ header {
 
   .btn-primary:hover{
     background-color: var(--color-primary-hover);
-    color: var(--color-grey100);
+    color: var(--color-grey100-text);
     text-decoration: none;
     cursor: pointer;
   }
@@ -1015,6 +1068,7 @@ footer {
   max-width: var(--desktop-width);
   margin: var(--desktop-margin);
   color: var(--color-grey600);
+  background-color: var(--color-bg);
 
   .footer-container {
     display: flex;
@@ -1032,9 +1086,6 @@ footer {
 @media (min-width: 768px) {
   
   header .header-container {
-    max-width: var(--tablet-width);
-    margin: var(--tablet-margin);
-
     gap: 4.5rem;
     
     .label {
@@ -1099,10 +1150,12 @@ footer {
     }
   }
 
-  #features {
+  #brands .main-container{
     max-width: var(--tablet-width);
     margin: var(--tablet-margin);
+  }
 
+  #features {
     .header{
       font-size: 33.5px;
     }
@@ -1121,6 +1174,11 @@ footer {
     }
   }
 
+  #features .main-container{
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+
   #HDIW {
     .HDIWmobile, .HDIWdesktop {
       display: none;
@@ -1132,6 +1190,15 @@ footer {
   }
 
   #HDIW .main-container {
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+
+  #info{
+    display: none;
+  }
+
+  #info .main-container {
     max-width: var(--tablet-width);
     margin: var(--tablet-margin);
   }
@@ -1215,10 +1282,10 @@ footer {
 /* changes for desktop mode */
 @media (min-width: 1400px) {
 
-  header .header-container {
+  header .header-container {   
     max-width: var(--desktop-width);
     margin: var(--desktop-margin);
-    
+
     grid-template-columns: auto 1fr auto auto;
     gap: 3rem;
     padding-bottom: 8rem;
@@ -1276,19 +1343,18 @@ footer {
     margin: var(--desktop-margin);
   }
 
-  #brands {
-    max-width: var(--desktop-width);
-    margin: var(--desktop-margin);
-    
+  #brands {    
     #brand-5, #brand-6{
       display: flex;
     }
   }
 
-  #features {
+  #brands .main-container {
     max-width: var(--desktop-width);
     margin: var(--desktop-margin);
+  }
 
+  #features {
     .phone{
       display: grid;
     }
@@ -1302,6 +1368,11 @@ footer {
       "phone main3 main4"
       "phone main5 main6";
     }
+  }
+
+  #features .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
   }
 
   #HDIW{
@@ -1327,7 +1398,11 @@ footer {
   #info{
     display: block;
     padding-inline: 5rem; 
+  }
 
+  #info .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
   }
 
   #review {
@@ -1401,6 +1476,11 @@ footer {
 
   footer .footer-container {
     padding-bottom: 2.5rem;
+  }
+
+  footer .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
   }
 }
 /* end of changes for desktop mode */
