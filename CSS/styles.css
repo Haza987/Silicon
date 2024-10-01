@@ -10,8 +10,9 @@
   --desktop-width: 1320px;
   --desktop-margin: 0 auto;
 
-  background-color: white;
+  background-color: #ffffff;
   --color-bg: #ffffff;
+  --color-header-bg: #ffffff;
   --color-grey100-text: #F3F6FF;
   --color-grey100: #F3F6FF;
   --color-grey200: #EFF2FC;
@@ -33,6 +34,7 @@
   --color-success-clicked: hsl(142, 71%, 40%);
   --color-warning: #FFBA08;
   --color-info: #4C82F7;
+  --color-icon-background: #F3F3FE;
   --color-hero-gradient: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
 }
 
@@ -53,6 +55,7 @@ html {
   color-scheme: dark;
   background-color: #0B0F19;
   --color-bg: #0B0F19;
+  --color-header-bg: #1B1F29;
   --color-grey100-text: #F3F6FF;
   --color-grey100: #151822;
   --color-grey200: #EFF2FC;
@@ -65,7 +68,7 @@ html {
   --color-grey700: #565973;
   --color-grey800: #33354D;
   --color-grey900-text: #F3F6FF;
-  --color-grey900: #F3F6FF;
+  --color-grey900: #0B0F19;
   --color-primary: #6366F1;
   --color-primary-hover: hsl(239, 84%, 70%);
   --color-primary-clicked: hsl(239, 84%, 63%);
@@ -74,6 +77,7 @@ html {
   --color-success-clicked: hsl(142, 71%, 40%);
   --color-warning: #FFBA08;
   --color-info: #4C82F7;
+  --color-icon-background: #12162A;
   --color-hero-gradient: linear-gradient(to top, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%), #0b0f19;;
 }
 
@@ -106,7 +110,7 @@ header {
       padding-left: var(--container-padding);
       padding-right: var(--container-padding);
 
-      background-color: var(--color-bg);
+      background-color: var(--color-header-bg);
 
       display: grid;
       align-items: center;
@@ -447,6 +451,16 @@ header {
   }
 
   .icon {
+    position: relative;
+    margin-left: .5em;
+    top: 20%;
+
+    background-color: var(--color-icon-background);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60px;
     height: 60px;
   }
@@ -454,37 +468,37 @@ header {
   .main1 {
     grid-area: main1;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .main2 {
     grid-area: main2;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .main3 {
     grid-area: main3;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .main4 {
     grid-area: main4;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .main5 {
     grid-area: main5;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .main6 {
     grid-area: main6;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .phone{
@@ -624,6 +638,18 @@ header {
 
       display: flex;
       gap: 7rem;
+    }
+
+    .icon {
+    margin-bottom: 1rem;
+    background-color: var(--color-icon-background);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
     }
 
     .learn-more {
@@ -1282,6 +1308,10 @@ footer {
 /* changes for desktop mode */
 @media (min-width: 1400px) {
 
+  header {
+    background-color: var(--color-header-bg);
+  }
+
   header .header-container {   
     max-width: var(--desktop-width);
     margin: var(--desktop-margin);
@@ -1328,7 +1358,7 @@ footer {
 
       .downloadbuttons {
         .app {
-          width: 250px;
+          width: 180px;
         }
       }
     }
