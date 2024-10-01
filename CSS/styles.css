@@ -720,7 +720,7 @@ header {
       border: 1px;
       border-radius: .5rem;
       background-color: var(--color-bg);
-      color: var(--color-grey100-text);
+      
       box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
   
       .quotemark {
@@ -734,14 +734,14 @@ header {
   
       .text {
         padding: 1.5rem 1.5rem;
-        color: var(--color-grey100-text);
+        color: var(--color-grey700-text);
         font-weight: 100;
       }
   
       .reviewer{
         padding-inline: 1.5rem;
         padding-bottom: .5rem;  
-        color: var(--color-grey100-text);
+        color: var(--color-grey900-text);
       }
     }
   
@@ -765,14 +765,14 @@ header {
 
       .text {
         padding: 1.5rem 1.5rem;
-        color: var(--color-grey100-text);
+        color: var(--color-grey700-text);
         font-weight: 100;     
       }
 
       .reviewer{
         padding-inline: 1.5rem;
         padding-bottom: .5rem;  
-        color: var(--color-grey100-text);
+        color: var(--color-grey900-text);
       }
     }
 
