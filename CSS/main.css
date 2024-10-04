@@ -265,7 +265,7 @@ header .btn-mobile {
 #hero {
   background: var(--color-hero-gradient);
   padding-inline: 1rem;
-  height: 500px;
+  height: 520px;
 }
 #hero .main-container {
   display: grid;
@@ -323,14 +323,39 @@ header .btn-mobile {
 #hero .content .downloadbuttons .app:active {
   background-color: var(--color-primary-clicked);
 }
+#hero .content .downloadbuttons .app-dark {
+  background-color: var(--color-grey900);
+  color: var(--color-grey100-text);
+  border-radius: 8px;
+  padding: 12px 25px;
+  height: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+#hero .content .downloadbuttons .app-dark:hover {
+  background-color: var(--color-primary);
+  color: var(--color-grey100-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+#hero .content .downloadbuttons .app-dark:active {
+  background-color: var(--color-primary-clicked);
+}
 #hero .content .discovermore {
   grid-area: discovermore;
   color: var(--color-grey700-text);
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   gap: 2.5rem;
   text-decoration: none;
+}
+@media (min-width: 1400px) {
+  #hero .content .discovermore {
+    justify-content: left;
+  }
 }
 #hero .content .discovermore .btn-circle {
   height: 44px;
@@ -353,14 +378,14 @@ header .btn-mobile {
 }
 #hero .images .img-back {
   position: absolute;
-  bottom: -30px;
+  bottom: -29px;
   right: 100px;
   width: 70%;
   height: 80%;
 }
 #hero .images .img-front {
   position: absolute;
-  bottom: -30px;
+  bottom: -29px;
   right: 0;
   width: 70%;
   height: 100%;
@@ -390,11 +415,18 @@ header .btn-mobile {
   #hero .content {
     text-align: left;
   }
+  #hero .content .downloadbuttons .app, #hero .content .downloadbuttons .app-dark {
+    height: 52px;
+    width: 250px;
+  }
   #hero .discovermore {
     justify-content: flex-start;
   }
   #hero .images {
     display: block;
+  }
+  #hero .images .img-back, #hero .images .img-front {
+    bottom: -31px;
   }
   #hero .main-container {
     max-width: var(--tablet-width);
@@ -418,7 +450,8 @@ header .btn-mobile {
   #hero .content {
     text-align: left;
   }
-  #hero .content .downloadbuttons .app {
+  #hero .content .downloadbuttons .app, #hero .content .downloadbuttons .app-dark {
+    height: 52px;
     width: 180px;
   }
   #hero .discovermore {
@@ -606,7 +639,6 @@ header .btn-mobile {
 }
 #HDIW img {
   padding-bottom: 2rem;
-  padding-inline: 2.5rem;
 }
 
 @media (min-width: 768px) {
@@ -631,6 +663,9 @@ header .btn-mobile {
   #HDIW .HDIWdesktop h1 {
     font-size: 40px;
     padding-bottom: 2rem;
+  }
+  #HDIW .HDIWdesktop img {
+    padding-inline: 2.5rem;
   }
   #HDIW .main-container {
     max-width: var(--desktop-width);
@@ -964,8 +999,9 @@ header .btn-mobile {
 #faq .contactus {
   grid-area: contact;
   position: absolute;
-  left: 34%;
+  left: 50%;
   bottom: 20px;
+  transform: translateX(-50%);
   border-radius: 8px;
   padding: 12px 25px;
   justify-content: center;
