@@ -1,0 +1,211 @@
+#hero {
+  background: var(--color-hero-gradient);
+  padding-inline: 1rem;
+  height: 500px;
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "headline"
+    "content";
+  }
+
+  .headline {
+    grid-area: headline;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1{
+      font-size: 34px;
+      font-weight: 800;
+      padding: 0 var(--container-padding);
+    }
+  }
+
+  .content {
+    grid-area: content;
+    text-align: center;
+    padding: 0 var(--container-padding);
+
+    p {
+      font-size: 18px;
+      margin-bottom: 2.5rem;
+    }
+
+    .downloadbuttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding: 0 .1rem;
+
+      @media (min-width: 1400px) {
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      .app {
+        background-color: var(--color-grey900);
+        color: var(--color-grey100-text);
+        border-radius: 8px;
+        padding: 12px 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      
+      .app:hover {
+        background-color: var(--color-primary);
+        color: var(--color-grey100-text);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      .app:active{
+        background-color: var(--color-primary-clicked);
+      }
+    }
+
+    .discovermore {
+      grid-area: discovermore;
+      color: var(--color-grey700-text);
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 2.5rem;
+      text-decoration: none;
+      
+      
+      .btn-circle {
+        height: 44px;
+        width: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid var(--color-grey300);
+        background-color: var(--color-grey100);
+        color: var(--color-grey900-text);
+      }
+
+    }
+
+    .discovermore :hover {
+      text-decoration: underline;
+    }
+
+  }
+
+  .images {
+    position: relative;
+    display: none;
+    grid-area: images;
+
+    .img-back {
+    position: absolute;
+    bottom: -30px;
+    right: 100px;
+    width: 70%;
+    height: 80%;
+    
+    }
+
+    .img-front {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    }
+
+    @media (min-width: 1400px) {
+      left: 10%;
+
+      .img-back {
+        right: 170px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #hero {
+    padding-bottom: 0;
+    height: 523px;
+
+    .main-container {
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+      "headline headline"
+      "content images";
+    }
+
+    .headline {
+      h1 {
+        font-size: 44.3px;
+      }
+    }
+
+    .content {
+      text-align: left;
+    }
+
+    .discovermore {
+      justify-content: flex-start;
+    }
+
+    .images{
+      display: block;
+    }
+
+  }
+
+  #hero .main-container{
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+}
+
+@media (min-width: 1400px) {
+  
+  #hero {
+    height: 575px;
+  
+    .main-container {
+      grid-template-columns: 2fr 3fr;
+      grid-template-areas:
+      "headline images"
+      "content images";
+    }
+  
+    .headline {
+      text-align: left;
+      
+      h1{
+        font-size: 56px;
+      }
+    }
+  
+    .content {
+      text-align: left;
+  
+      .downloadbuttons {
+        .app {
+          width: 180px;
+        }
+      }
+    }
+  
+    .discovermore {
+      margin-top: 10rem;
+    }
+  }
+  
+  #hero .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+  }
+  }

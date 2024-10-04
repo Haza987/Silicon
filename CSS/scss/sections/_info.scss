@@ -1,0 +1,139 @@
+#info {
+  background-color: var(--color-bg);
+
+  display: none;
+  padding-top: 5rem;
+
+  .top-section {
+    position: relative;
+    display: grid;
+    margin-bottom: 5rem;
+
+    grid-auto-rows: minmax(100px auto);
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-template-areas:
+    "headline images"
+    "list images"
+    "learn images";
+
+    .headline-top {
+      grid-area: headline;
+      font-size: 32px;
+      padding-right: 2rem;
+    }
+
+    .list{
+      grid-area: list;
+      list-style: none;
+    }
+
+    .list-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .list .tick {
+      vertical-align: middle;
+      margin-right: 1rem;
+    }
+
+    .learn-more{
+      grid-area: learn;
+    }
+
+    .right-images {
+      grid-area: images;
+      
+      .front {
+        position: absolute;
+        bottom: -40px;
+        right: 175px;
+      }
+    }
+  }
+
+  .bottom-section {
+    display: grid;
+    grid-auto-rows: minmax(100px auto);
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+    "images headline headline"
+    "images info info"
+    "images learn learn";
+
+    .left-images {
+      grid-area: images;
+    }
+
+    .headline-bottom {
+      grid-area: headline;
+      font-size: 32px;
+    }
+
+    .info {
+      grid-area: info;
+
+      display: flex;
+      gap: 5rem;
+    }
+
+    .icon {
+    margin-bottom: 1rem;
+    background-color: var(--color-icon-background);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    }
+
+    .learn-more {
+      grid-area: learn;
+    }
+  }
+
+  .learn-more {
+    
+    border-radius: 8px;
+    padding: 12px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 10rem;
+    height: 4rem;
+    font-size: 14px;
+    font-weight: 600;
+
+    i {
+      padding-left: .5rem;
+    }
+  }
+
+}
+
+@media (min-width: 768px) {
+  #info{
+    display: none;
+  }
+
+  #info .main-container {
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+
+}
+
+@media (min-width: 1400px) {
+  #info{
+    display: block;
+    padding-inline: 5rem; 
+  }
+
+  #info .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+  }
+}

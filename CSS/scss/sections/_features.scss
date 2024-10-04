@@ -1,0 +1,152 @@
+#features {
+  padding-bottom: 7rem;
+
+  background-color: var(--color-bg);
+
+  .item {
+    padding: 1rem;
+    display: grid;
+  }
+
+  .header{
+    grid-area: header;
+    color: var(--color-grey900-text);
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .main-description{
+    grid-area: description;
+    color: var(--color-grey700-text);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .subheader {
+    font-size: 20px;
+  }
+
+  .subdescription {
+    font-size: 16px;
+  }
+
+  .icon {
+    position: relative;
+    margin-left: .5em;
+    top: 20%;
+
+    background-color: var(--color-icon-background);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+  }
+
+  .main1 {
+    grid-area: main1;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main2 {
+    grid-area: main2;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main3 {
+    grid-area: main3;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main4 {
+    grid-area: main4;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main5 {
+    grid-area: main5;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main6 {
+    grid-area: main6;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .phone{
+    grid-area: phone;
+    display: none;
+  }
+
+  .grid{
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "header"
+    "description"
+    "main1"
+    "main2"
+    "main3"
+    "main4"
+    "main5"
+    "main6"
+  }
+}
+
+@media (min-width: 768px) {
+  #features {
+    .header{
+      font-size: 33.5px;
+    }
+    .main-description{
+      font-size: 18px;
+    }
+
+    .grid{
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+      "header header"
+      "description description"
+      "main1 main2"
+      "main3 main4"
+      "main5 main6"
+    }
+  }
+
+  #features .main-container{
+    max-width: var(--tablet-width);
+    margin: var(--tablet-margin);
+  }
+}
+
+@media (min-width: 1400px) {
+  #features {
+    .phone{
+      display: grid;
+    }
+
+    .grid{
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+      "phone header header"
+      "phone description description"
+      "phone main1 main2"
+      "phone main3 main4"
+      "phone main5 main6";
+    }
+  }
+
+  #features .main-container {
+    max-width: var(--desktop-width);
+    margin: var(--desktop-margin);
+  }
+}
